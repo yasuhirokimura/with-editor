@@ -18,6 +18,9 @@ EMACS      ?= emacs
 EMACS_ARGS ?=
 EMACS_ARGS += --eval '(setq with-editor-emacsclient-executable nil)'
 
+PREFIX := $(shell $(EMACS) -Q --batch --eval \
+	  "(princ (expand-file-name \"../../../..\" data-directory))")
+
 LOAD_PATH  ?= $(addprefix -L ../../,$(DEPS))
 LOAD_PATH  += -L .
 
