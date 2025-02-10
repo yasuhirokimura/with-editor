@@ -34,3 +34,6 @@ $(PKG)-autoloads.el: $(ELS)
     (let ((generated-autoload-file file))\
       (update-directory-autoloads default-directory))))" \
 	2>&1 | sed "/^Package autoload is deprecated$$/d"
+
+install-lisp: lisp
+	install -m 644 -p *.el *.elc $(PREFIX)/share/emacs/site-lisp
