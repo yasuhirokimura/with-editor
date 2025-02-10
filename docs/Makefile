@@ -111,3 +111,6 @@ CLEAN = $(PKG).info dir $(PKG) $(PKG).html $(PKG).pdf
 clean:
 	@printf " Cleaning docs/*...\n"
 	@rm -rf $(CLEAN)
+
+install-info: info
+	install -m 644 -p $(PKG).info $(PREFIX)/share/info
