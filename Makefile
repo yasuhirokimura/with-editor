@@ -23,6 +23,7 @@ help:
 	$(info make clean        - remove most generated files)
 	$(info make install-lisp = install source, byte-code and autoloads)
 	$(info make install-info - install info manual)
+	$(info make install      - do make install-lisp and make install-info)
 	@printf "\n"
 
 lisp:
@@ -59,6 +60,7 @@ clean:
 	@$(MAKE) -C lisp clean
 	@$(MAKE) -C docs clean
 
+install: install-lisp install-info
 install-lisp:
 	@$(MAKE) -C lisp install-lisp
 install-info:
